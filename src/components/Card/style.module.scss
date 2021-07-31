@@ -1,0 +1,28 @@
+.cardContainer {
+    height: 30px;
+    width: 20px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #F0F3F5;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+    &.active {
+        transition: .3s;
+        transform: rotateY(360deg);
+        .number {
+            opacity: 1;
+            transition: .3s;
+        }
+    }
+}
+ 
+.number {
+    font-weight: bold;
+    font-size: 20px;
+    color: #5a5e61;
+    opacity: 0;
+    transition: .3s;
+}

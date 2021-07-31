@@ -1,0 +1,16 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    
+}
+
+.playground {
+    margin-top: 100px;
+    width: 800px;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+}
