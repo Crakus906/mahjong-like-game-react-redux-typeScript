@@ -26,10 +26,8 @@ export default function Home() {
     if(size % 2 === 0 &&  firstNumber !== secondNumber) {
         setTimeout(() => {
             dispatch(setActiveCards(newActiveCards.slice(0, size - 2)));
-        }, 1000);
+        }, 300);
     }
-
-    debugger
   }
 
   useEffect(() => {
