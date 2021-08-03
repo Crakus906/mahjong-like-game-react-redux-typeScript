@@ -21,8 +21,6 @@ export default function Home() {
     const firstNumber = map[lastElem];
     const secondNumber = map[penultElem];
 
-    console.log({ lastElem, penultElem, firstNumber, secondNumber, map, activeCards })
-
     if(size % 2 === 0 &&  firstNumber !== secondNumber) {
         setTimeout(() => {
             dispatch(setActiveCards(newActiveCards.slice(0, size - 2)));

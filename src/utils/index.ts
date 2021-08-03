@@ -2,27 +2,16 @@ const shuffle = (array: Array<number>) => {
     return array.sort(() => Math.random() - 0.5);
 }
 
-export const generateMap = (size = 50) => {
-    let map: Array<number> = [];
- 
-    for (let i = 2; i <= size; i++) {
-        let flag: Number = 1;
+const isPrime = (num: number) => {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+        if(num % i === 0) return false; 
+    return num > 1;
+}
 
-        if (i > 2 && i % 2 !== 0)
-        {
-            for (let j = 3; j*j <= i ; j=j+2)
-            {
-                if (i%j===0)
-                {
-                    flag=0;
-                    break;
-                }
-            }
-        }
-        else if (i !== 2) flag = 0;
-        if (flag===1) return map.push(i);
-    }
-    const finishArr: Array<number>  = [...map, ...map] 
+export const generateMap = (size: number = 50) => {
+    let map: Array<number> = [1, 2, 3];
 
-    return shuffle(finishArr);
+    for (let i = 4; i <= size; i++) if(isPrime(i)) map.push(i);
+
+    return shuffle([...map, ...map]);
 }
